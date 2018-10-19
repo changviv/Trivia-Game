@@ -6,11 +6,12 @@ $("#start-page").on("click", function() {
 
 $("#question-page").on("click", "#submit", function() {
 	game.results();
-	game.stop();
-	console.log("This has been submitted");
 });
 
-// play again button after result page is loaded
+$("#results-page").on("click", "#replay", function() {
+	game.start();
+});
+
 
 $("#results-page").hide();
 
@@ -47,7 +48,6 @@ var questions = [
     }
 ];
 
-
 var game = {
 	correct: 0,
 	incorrect: 0,
@@ -59,7 +59,7 @@ var game = {
 		$(".start").hide()
 
 		if (game.counter === 0) {
-			game.stop();
+			game.results();
 		};
 	},
 	start: function() {
@@ -68,28 +68,25 @@ var game = {
 		for (var i = 0; i < questions.length; i++) {
       $("#question-page").append('<h2>' + questions[i].question + '</h2>');
       for (var j = 0; j < questions[i].choices.length; j++){
-        $("#question-page").append('<input type="radio" name ="question' + '-' + i + '"value="' + questions[i].choices[j] + '">' + questions[i].choices[j]);
+        $("#question-page").append('<input type="radio" name ="question' + i + '"value="' + questions[i].choices[j] + '">' + questions[i].choices[j]);
       }
   	}
   	$("#question-page").append("<button id='submit'>Submit</button>");
 	},
 	results: function() {
-
-
-
-	// 	$("input[type=radio][checked]").each(function() {
-
-	// 	})
-		$.each(questions, function(index, value) {
-				if ( questions[index].answer === $('input[type=radio]:checked').val() ) {
-					game.correct++
-				} else {
-					game.incorrect++
+			for (var j = 0; j < questions.length; j++) {
+				if (!$("input[name='question" + j + "']").is(":checked")) {
+					game.unanswered++
 				}
-			console.log($('input[type=radio]:checked').val())
-		})
-
-	// 	game.stop();
+				else {
+					if ($("input[name='question" + j + "']:checked").val() === questions[j].answer) {
+						game.correct++
+					} else {
+						game.incorrect++
+					}
+				}
+			}
+		game.stop()
 	},
 	stop: function() {
 		clearInterval(timer);
@@ -99,26 +96,5 @@ var game = {
 		$("#no-answers").text(game.unanswered);
 		$("#correct-answers").text(game.correct);
 		$("#wrong-answers").text(game.incorrect);
-
 	},
-
 };
-
-function correctAnswer() {
-	correct++;
-}
-
-function wrongAnswer() {
-	wrong++;
-}
-
-function unanswered() {
-	unanswered++
-}
-
-function newQuestion() {
-
-}
-
-
-// calculate the score
