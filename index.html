@@ -9,13 +9,25 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
 </head>
 <body>
-<h1>Trivia Game: </h1>
-<button type="button" class="start btn btn-primary btn-lg">START!</button>
-<div id="show-timer"></div>
-<div id="questions"></div>
-<div id="answers"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+	<h1>Trivia Game: HQ Style</h1>
+	<h3>Trivia Questions that get harder as you go</h3>
+	<h4>You have 45 seconds to answer 6 questions. Good luck!</h3>
+  <div id="start-page" class="panel">
+  	<button type="button" class="btn btn-primary btn-lg" id="start-page">START!</button>
+  </div>
+	<div id="question-page" class="panel">
+		<div>Time Remaining: <span id="show-timer">45</span> Seconds</div>
+    <div id="questions"></div>
+	  <div id="answers"></div>
+	</div>
+	<div id="results-page" class="panel">
+		<h2> Well Done! Here are your results!</h2>
+		<div> Unanswered: <span id="no-answers"></span></div>
+    <div> Correct Answers: <span id="correct-answers"></span></div>
+	  <div> Incorrect Answers: <span id="wrong-answers"></span></div>
+	</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
 </html>
