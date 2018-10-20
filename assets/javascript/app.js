@@ -1,12 +1,16 @@
 var timer;
-// start the game
-$("#start-page").on("click", function() {
-	game.start();
+
+$(document).ready(function(){
+    // start the game
+    $("#start-page").on("click", function() {
+    	game.start();
+    });
 });
 //clicks submit when answers all questions
 $("#question-page").on("click", "#submit", function() {
 	game.results();
 });
+
 // hide results page when start
 $(".question-container").hide();
 $("#results-page").hide();
