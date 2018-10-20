@@ -28,7 +28,7 @@ var questions = [
     	answer: "Steve Kerr"
     },
     {
-    	question: "Dr. Seuss's Lorax character claims to specifically pseak for what part of nature?",
+    	question: "Dr. Seuss's Lorax character claims to specifically speak for what part of nature?",
     	choices: ["Bees", "Trees", "Seas", "Leaves"],
     	answer: "Trees"
     },
