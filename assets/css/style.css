@@ -1,0 +1,56 @@
+body {
+	background-image: url("../images/hq_wallpaper.png");
+	color: white;
+	text-align: center;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+
+.panel {
+	width: 80%;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+h1 {
+	font-size: 60px;
+	font-weight: bolder;
+}
+
+h2 {
+	font-size: 40px;
+	padding: 10px;
+	font-family: 'Amatic SC', cursive;
+}
+
+label {
+	margin: 0px 20px 0px 5px;
+	font-size: 20px;
+}
+
+.results-p {
+	font-size: 35px;
+
+}
+
+#results-page, .question-container {
+	background-color: #ce3f47;
+	border-radius: .8rem;
+}
+.question-container {
+	margin: 50px auto;
+	letter-spacing: .1rem;
+}
+
+#lead {
+	font-size: 50px;
+}
+
+#time {
+	font-size: 45px;
+	color: yellow;
+}
+
+#submit {
+	padding: 15px 25px;
+	margin: 20px;
+}
